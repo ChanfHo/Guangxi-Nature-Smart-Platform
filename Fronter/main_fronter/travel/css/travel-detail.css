@@ -1,0 +1,542 @@
+/**
+ * 广西旅游路线推荐 - 详情页样式
+ * 文件路径: /home/ubuntu/ComputerDesign/Fronter/main_fronter/travel/css/travel-detail.css
+ */
+
+/* ---------- 路线详情模态框 ---------- */
+/* 修改模态框容器，允许整体滚动 */
+.route-detail-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--overlay-color);
+  display: none;
+  flex-direction: column;
+  z-index: 200;
+  overflow-y: auto; /* 改为auto允许整体垂直滚动 */
+}
+
+/* 修改内容容器，确保高度适合内容 */
+.modal-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  position: relative;
+  overflow: visible; /* 改为visible允许内容溢出 */
+  min-height: 100%; /* 确保至少填满视窗 */
+}
+
+.close-modal {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #555;
+  cursor: pointer;
+  z-index: 210;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color var(--transition-fast);
+}
+
+.close-modal:hover {
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+/* ---------- 详情页地图区域 ---------- */
+.detail-map-section {
+  flex: 1;
+  min-height: 60vh;
+  position: relative;
+  width: 100%;
+  z-index: 5;
+}
+
+#detail-map {
+  width: 100%;
+  height: 100%;
+}
+
+.detail-caption {
+  position: absolute;
+  left: var(--space-lg);
+  top: var(--space-lg);
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  z-index: 10;
+}
+
+.detail-caption h2 {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-xs);
+  color: var(--text-dark);
+}
+
+.detail-theme {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: var(--space-sm);
+}
+
+.detail-brief {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* 详情页地图控件定位调整 */
+.detail-map-section .mapboxgl-control-container .mapboxgl-ctrl-top-right {
+  top: var(--space-lg);
+}
+
+/* 滑动提示 */
+.scroll-indicator {
+  position: absolute;
+  bottom: var(--space-lg);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  animation: bounce 2s infinite;
+  z-index: 10;
+}
+
+.scroll-indicator-text {
+  font-size: 0.9rem;
+  margin-right: var(--space-sm);
+}
+
+.scroll-indicator-icon {
+  font-size: 1.2rem;
+}
+
+@keyframes bounce {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  40% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+
+  60% {
+    transform: translateX(-50%) translateY(-5px);
+  }
+}
+
+/* ---------- 详情页内容区域 ---------- */
+.detail-content-section {
+  background-color: white;
+  padding: var(--space-xl);
+  min-height: 100vh;
+  position: relative;
+  z-index: 10;
+  border-top-left-radius: var(--radius-lg);
+  border-top-right-radius: var(--radius-lg);
+  margin-top: -20px;
+  /* 创建重叠效果 */
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+}
+
+#detail-title {
+  font-size: 2rem;
+  color: var(--text-dark);
+  margin-bottom: var(--space-md);
+}
+
+.route-theme {
+  font-size: 1.2rem;
+  color: #777;
+  margin-bottom: var(--space-lg);
+  font-weight: 300;
+}
+
+.route-overview {
+  padding: var(--space-lg);
+  background-color: #f9f9f9;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-xl);
+  line-height: 1.8;
+}
+
+.route-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+.route-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  padding: var(--space-md);
+  background-color: #f5f5f5;
+  border-radius: var(--radius-md);
+  flex: 1;
+}
+
+
+/* 为每条路线的详情页添加自定义颜色 */
+/* 路线一：山水画廊 - 绿色主题 */
+.detail-content-section[data-route="1"] #detail-content-title {
+  color: var(--route1-color);
+}
+
+.detail-content-section[data-route="1"] .route-theme {
+  color: #66BB6A;
+}
+
+.detail-content-section[data-route="1"] .route-stat-item {
+  border-top: 3px solid var(--route1-color);
+}
+
+/* 路线二：跨国秘境 - 蓝色主题 */
+.detail-content-section[data-route="2"] #detail-content-title {
+  color: var(--route2-color);
+}
+
+.detail-content-section[data-route="2"] .route-theme {
+  color: #42A5F5;
+}
+
+.detail-content-section[data-route="2"] .route-stat-item {
+  border-top: 3px solid var(--route2-color);
+}
+
+/* 路线三：绿城生态 - 橙色主题 */
+.detail-content-section[data-route="3"] #detail-content-title {
+  color: var(--route3-color);
+}
+
+.detail-content-section[data-route="3"] .route-theme {
+  color: #FFA726;
+}
+
+.detail-content-section[data-route="3"] .route-stat-item {
+  border-top: 3px solid var(--route3-color);
+}
+
+/* 路线四：滨海风情 - 粉色主题 */
+.detail-content-section[data-route="4"] #detail-content-title {
+  color: var(--route4-color);
+}
+
+.detail-content-section[data-route="4"] .route-theme {
+  color: #EC407A;
+}
+
+.detail-content-section[data-route="4"] .route-stat-item {
+  border-top: 3px solid var(--route4-color);
+}
+
+.stat-value {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: var(--space-xs);
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* 景点列表标题 */
+.attractions-heading {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-sm);
+  border-bottom: 2px solid #eee;
+}
+
+/* 景点列表 */
+.attractions-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+/* 单个景点项 */
+.attraction-item {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-lg);
+  border-radius: var(--radius-md);
+  background-color: #fff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #eee;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.attraction-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.attraction-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--space-md);
+}
+
+.attraction-order {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--route1-color);
+  color: white;
+  font-weight: bold;
+  margin-right: var(--space-md);
+}
+
+/* 根据不同路线设置不同颜色 */
+.attraction-item[data-route="1"] .attraction-order {
+  background-color: var(--route1-color);
+}
+
+.attraction-item[data-route="2"] .attraction-order {
+  background-color: var(--route2-color);
+}
+
+.attraction-item[data-route="3"] .attraction-order {
+  background-color: var(--route3-color);
+}
+
+.attraction-item[data-route="4"] .attraction-order {
+  background-color: var(--route4-color);
+}
+
+.attraction-item h4 {
+  font-size: 1.3rem;
+  margin-bottom: 0;
+  color: var(--text-dark);
+}
+
+.attraction-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #777;
+  margin: var(--space-sm) 0 var(--space-md);
+}
+
+.attraction-item p {
+  line-height: 1.7;
+  margin-bottom: var(--space-md);
+}
+
+.attraction-image {
+  width: 100%;
+  height: 200px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin-top: var(--space-md);
+}
+
+.attraction-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+.attraction-image:hover img {
+  transform: scale(1.05);
+}
+
+/* 景点标题添加颜色 */
+.attractions-heading {
+  font-size: 24px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+/* ---------- 弹出窗口样式 ---------- */
+.mapboxgl-popup-content {
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+}
+
+.popup-content h3 {
+  font-size: 1.1rem;
+  margin-bottom: var(--space-xs);
+  color: var(--text-dark);
+}
+
+.popup-type {
+  font-size: 0.8rem;
+  color: #777;
+  margin-bottom: var(--space-xs);
+}
+
+.popup-content p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: var(--space-xs) 0;
+}
+
+.popup-city {
+  font-size: 0.8rem;
+  color: #777;
+  margin-top: var(--space-xs);
+  text-align: right;
+}
+
+.view-detail-btn {
+  display: inline-block;
+  margin-top: var(--space-sm);
+  padding: var(--space-xs) var(--space-sm);
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  color: #555;
+  text-align: center;
+}
+
+/* ---------- 媒体查询 ---------- */
+@media (max-width: 768px) {
+  .detail-caption {
+    max-width: 300px;
+    padding: var(--space-sm);
+  }
+
+  .detail-caption h2 {
+    font-size: 1.2rem;
+  }
+
+  .detail-content-section {
+    padding: var(--space-lg);
+  }
+
+  #detail-title {
+    font-size: 1.6rem;
+  }
+
+  .route-theme {
+    font-size: 1rem;
+  }
+
+  .attraction-item {
+    padding: var(--space-md);
+  }
+
+  .attraction-item h4 {
+    font-size: 1.1rem;
+  }
+
+  .attraction-image {
+    height: 160px;
+  }
+
+  .route-stat-item {
+    min-width: 100px;
+  }
+
+  .stat-value {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .detail-map-section {
+    min-height: 50vh;
+  }
+
+  .detail-caption {
+    left: var(--space-md);
+    top: var(--space-md);
+    max-width: calc(100% - 100px);
+  }
+
+  .detail-caption h2 {
+    font-size: 1.1rem;
+    margin-bottom: 2px;
+  }
+
+  .detail-theme {
+    font-size: 0.85rem;
+  }
+
+  .detail-brief {
+    font-size: 0.8rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  #detail-title {
+    font-size: 1.4rem;
+  }
+
+  .route-overview {
+    padding: var(--space-md);
+  }
+
+  .attraction-header {
+    align-items: flex-start;
+  }
+
+  .attraction-order {
+    min-width: 30px;
+    height: 30px;
+    font-size: 0.9rem;
+  }
+
+  .attraction-image {
+    height: 140px;
+  }
+
+  .route-stats {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+}
+
+/* 地图数据来源信息样式 */
+.map-source-info {
+  padding: 5px 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 4px;
+  font-size: 8px;
+  line-height: 1.4;
+  color: #333;
+  max-width: 280px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 5px;
+}
+
+.map-source-info p {
+  margin: 2px 0;
+}

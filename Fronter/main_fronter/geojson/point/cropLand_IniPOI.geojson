@@ -1,0 +1,193 @@
+{
+    "type": "FeatureCollection",
+    "name": "cropLand_IniPOI",
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+        }
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "景区名": "广西八桂田园",
+                "所在地": "南宁市西乡塘区",
+                "等级": "4A",
+                "经度": 108.250326,
+                "纬度": 22.858924,
+                "属性": "田",
+                "介绍": "现代农业示范园，集农耕体验、科普教育于一体。四季瓜果飘香，稻田艺术画展现壮乡风情，都市近郊田园休闲胜地。",
+                "图片路径": "./geojson/images/cropland/baguitianyuan.png"
+                
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    108.241269826000064,
+                    22.936479462000079
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "景区名": "龙胜龙脊梯田",
+                "所在地": "桂林市龙胜县",
+                "等级": "4A",
+                "经度": 110.146532,
+                "纬度": 25.776829,
+                "属性": "田",
+                "介绍": "世界农业文化遗产，千年梯田如巨龙盘山。春灌银镜、秋染金浪，瑶壮村寨吊脚楼点缀云端，云雾中宛如仙境。",
+                "图片路径": "./geojson/images/cropland/longshenglongjititian.png"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    110.146532,
+                    25.776829
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "景区名": "古辣稻花香里",
+                "所在地": "南宁市宾阳县",
+                "等级": "4A",
+                "经度": 108.99969,
+                "纬度": 23.108332,
+                "属性": "田",
+                "介绍": "连片稻田绵延万亩，夏秋稻浪翻涌、白鹭翩跹。稻田迷宫、农耕文化馆融合生态与趣味，重现“稻花香里说丰年”诗意。",
+                "图片路径": "./geojson/images/cropland/guladaohuaxiangli.png"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    108.99969,
+                    23.108332
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "景区名": "南山茶海",
+                "所在地": "贺州市",
+                "等级": "4A",
+                "经度": 110.853709,
+                "纬度": 24.148544,
+                "属性": "山、田",
+                "介绍": "万亩茶园层叠如碧波，云雾缭绕似水墨画卷。采茶制茶体验、茶文化博览，登观景台俯瞰“茶山云海”，清香沁人心脾。",
+                "图片路径": "./geojson/images/cropland/nanshanchahai.png"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    110.853709,
+                    24.148544
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "景区名": "凌云茶山金字塔",
+                "所在地": "百色市凌云县",
+                "等级": "4A",
+                "经度": 106.593513,
+                "纬度": 24.469035,
+                "属性": "田",
+                "介绍": "梯田式茶园形似金字塔，茶垄螺旋而上。白毫茶香飘千年，瑶族采茶歌悠扬，茶旅融合示范地。",
+                "图片路径": "./geojson/images/cropland/chashanjinzita.png"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.593513,
+                    24.469035
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "景区名": "融水杆洞乡梯田",
+                "所在地": "柳州市融水苗族自治县",
+                "等级": null,
+                "经度": 108.747359,
+                "纬度": 25.56282,
+                "属性": null,
+                "介绍": "苗岭深处“云端梯田”，春水映天光，秋收缀红瑶。芦笙节、拉鼓习俗传承千年，农耕与苗族文化交织。",
+                "图片路径": "./geojson/images/cropland/dongxiangtitian.png"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    108.747359,
+                    25.56282
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "景区名": "三江岑牙梯田",
+                "所在地": "柳州市三江侗族自治县",
+                "等级": null,
+                "经度": 109.20463,
+                "纬度": 25.711338,
+                "属性": null,
+                "介绍": "侗乡梯田依山而建，线条柔美如指纹。鼓楼风雨桥畔，稻田养鱼生态共生，侗族大歌回荡山谷。",
+                "图片路径": "./geojson/images/cropland/jinyatitian.png"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    109.20463,
+                    25.711338
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "景区名": "靖西巴泽梯田",
+                "所在地": "百色市靖西市",
+                "等级": null,
+                "经度": 106.389497,
+                "纬度": 22.956716,
+                "属性": null,
+                "介绍": "喀斯特地貌上的“大地指纹”，千层梯田错落有致。壮族牛耕、稻草编艺非遗活态传承，秋日稻黄映衬峰林如画。",
+                "图片路径": "./geojson/images/cropland/bazetitian.png"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    106.389497,
+                    22.956716
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "景区名": "南丹巴平梯田",
+                "所在地": "河池市南丹县",
+                "等级": null,
+                "经度": 107.456346,
+                "纬度": 25.218379,
+                "属性": null,
+                "介绍": "白裤瑶聚居地，梯田如绸带缠绕山腰。瑶族铜鼓舞、陀螺竞技民俗浓郁，秋收时节“晒秋”五彩斑斓。",
+                "图片路径": "./geojson/images/cropland/bapingtitian.png"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    107.456346,
+                    25.218379
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Static Template</title>
+</head>
+
+<body>
+  <div class="container">
+    <form action="#" class="login-form" id="loginForm">
+      <h2>登 录</h2>
+      <input type="text" name="username" placeholder="用户名" />
+      <input type="password" name="password" placeholder="密码" />
+      <button type="submit">登录</button>
+      <!-- 添加提示文字和注册链接 -->
+      <p class="register-text">
+        还没有账号？<a href="../register/index.html" class="register-link">去注册</a>
+      </p>
+    </form>
+  </div>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const username = event.target.username.value;
+      const password = event.target.password.value;
+      const backURL = 'http://localhost:8000/api/user/account/login';
+      fetch(backURL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ username, password })
+      })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then(data => {
+          console.log('登录返回数据:', data); // 调试返回数据
+
+          if (data.code === 200) {
+            // 确保正确获取token并存储
+            const userInfo = {
+              username: username,
+              token: data.data && data.data.token // 从正确的位置获取token
+            };
+            console.log('保存到localStorage的数据:', userInfo);
+            localStorage.setItem('userInfo', JSON.stringify(userInfo));
+            window.location.href = '../index.html';
+          } else {
+            alert(data.message || '登录失败，请检查用户名或密码！');
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          if (error.message && error.message.includes('500')) {
+            alert('注册失败：服务器内部错误，请联系管理员或稍后再试');
+          } else if (error.message && error.message.includes('422')) {
+            alert('注册失败：提交的数据格式有误，请检查输入信息');
+          } else {
+            alert('注册失败：无法连接到服务器，请检查网络连接！');
+          }
+
+          alert('登录失败');
+
+
+        })
+
+
+        ;
+
+      // 删除或注释掉测试环境逻辑，避免干扰
+      // const isTesting = false;
+      // if (isTesting) {...}
+    });
+  </script>
+</body>
+
+</html>

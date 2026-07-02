@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="广西特色旅游路线推荐，探索壮乡山水画廊、跨国秘境、绿城生态和滨海风情">
+  <meta name="keywords" content="广西旅游,喀斯特地貌,瀑布探险,壮乡风情,火山海岛,旅游路线">
+  <title>广西特色旅游路线推荐 - 自然风光之旅</title>
+
+  <!-- 引入Mapbox CSS -->
+  <link href="https://api.mapbox.com/mapbox-gl-js/v3.9.4/mapbox-gl.css" rel="stylesheet">
+
+  <!-- 引入自定义CSS -->
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="css/travel-cards.css">
+  <link rel="stylesheet" href="css/travel-detail.css">
+
+  <!-- 网站图标 -->
+  <link rel="icon" href="../icons/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+  <!-- 顶部导航栏 -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="../icons/logo2.png" alt="Logo">
+      <span>广西自然风光旅游推荐</span>
+    </div>
+    <nav class="menu">
+      <a href="#route-cards" class="js-scroll">精选路线</a>
+      <a href="#" id="toggle-map" class="active">地图浏览</a>
+      <a href="../index.html">返回主页</a>
+
+    </nav>
+  </header>
+
+  <!-- 地图容器（首屏显示） -->
+  <div class="main-map-container" id="main-map">
+    <!-- 地图将通过JavaScript加载 -->
+
+    <!-- 地图上方的路线选择器 -->
+    <div class="map-route-selector">
+      <div class="selector-title">选择路线</div>
+      <div class="selector-options">
+        <div class="selector-option active" data-route="1">山水画廊</div>
+        <div class="selector-option" data-route="2">跨国秘境</div>
+        <div class="selector-option" data-route="3">绿城生态</div>
+        <div class="selector-option" data-route="4">滨海风情</div>
+      </div>
+    </div>
+
+    <!-- 向下滚动提示 -->
+    <div class="scroll-down-indicator">
+      <div class="scroll-down-text">向下滚动查看详情</div>
+      <div class="scroll-down-arrow">↓</div>
+    </div>
+  </div>
+
+  <!-- 路线卡片区域（下滑后显示） -->
+  <main class="route-container" id="route-cards">
+    <h1 class="main-title">探索广西特色旅游路线</h1>
+    <p class="main-description">四条精心设计的路线，带您领略壮乡自然风光与人文风情</p>
+
+    <div class="routes-grid">
+      <!-- 路线一：山水画廊·喀斯特奇观之旅 -->
+      <section class="route-card" id="route1" data-route-id="1">
+        <div class="card-content">
+          <h2 class="route-title">山水画廊·喀斯特奇观之旅</h2>
+          <p class="route-theme">世界级喀斯特地貌与田园诗画</p>
+          <p class="route-description">探索世界文化遗产桂林山水，欣赏喀斯特地貌的壮观奇景，感受如诗如画的山水画廊。</p>
+          <button class="view-route-btn">查看路线详情</button>
+        </div>
+      </section>
+
+      <!-- 路线二：跨国秘境·瀑布探险之旅 -->
+      <section class="route-card" id="route2" data-route-id="2">
+        <div class="card-content">
+          <h2 class="route-title">跨国秘境·瀑布探险之旅</h2>
+          <p class="route-theme">跨国瀑布与边陲自然秘境</p>
+          <p class="route-description">寻访中越边境线上的天然瀑布群，探索鲜为人知的自然秘境，体验壮族传统村寨生活。</p>
+          <button class="view-route-btn">查看路线详情</button>
+        </div>
+      </section>
+
+      <!-- 路线三：绿城生态·壮乡风情之旅 -->
+      <section class="route-card" id="route3" data-route-id="3">
+        <div class="card-content">
+          <h2 class="route-title">绿城生态·壮乡风情之旅</h2>
+          <p class="route-theme">南宁都市圈自然与文化融合</p>
+          <p class="route-description">领略南宁绿城魅力，探索城市中的自然生态园林，感受壮族传统文化与现代都市的完美融合。</p>
+          <button class="view-route-btn">查看路线详情</button>
+        </div>
+      </section>
+
+      <!-- 路线四：滨海风情·火山海岛之旅 -->
+      <section class="route-card" id="route4" data-route-id="4">
+        <div class="card-content">
+          <h2 class="route-title">滨海风情·火山海岛之旅</h2>
+          <p class="route-theme">北部湾海滨风光与火山奇观</p>
+          <p class="route-description">畅游北部湾滨海风光，探索古火山遗迹与海岛奇景，领略热带海滨与地质奇观的独特魅力。</p>
+          <button class="view-route-btn">查看路线详情</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- 背景容器 -->
+  <div class="background-container">
+    <div class="bg-image active" id="bg-route1"></div>
+    <div class="bg-image" id="bg-route2"></div>
+    <div class="bg-image" id="bg-route3"></div>
+    <div class="bg-image" id="bg-route4"></div>
+  </div>
+
+  <!-- 路线详情模态框 -->
+  <div class="route-detail-modal" id="route-detail">
+    <div class="modal-content">
+      <button class="close-modal">&times;</button>
+
+      <!-- 详情页地图区域 -->
+      <div class="detail-map-section">
+        <div id="detail-map"></div>
+        <div class="detail-caption">
+          <h2 id="detail-title"></h2>
+          <div class="detail-theme" id="detail-theme"></div>
+          <div class="detail-brief" id="detail-brief"></div>
+        </div>
+
+        <!-- 滑动提示 -->
+        <div class="scroll-indicator">
+          <span class="scroll-indicator-text">向下滑动查看景点</span>
+          <span class="scroll-indicator-icon">↓</span>
+        </div>
+      </div>
+
+      <!-- 详情页内容区域 -->
+      <div class="detail-content-section">
+        <h2 id="detail-content-title"></h2>
+        <div class="route-theme" id="detail-content-theme"></div>
+
+        <div class="route-overview" id="route-overview">
+          <!-- 路线概述将通过JavaScript加载 -->
+        </div>
+
+        <div class="route-stats">
+          <div class="route-stat-item">
+            <div class="stat-value" id="stat-attractions">0</div>
+            <div class="stat-label">景点数量</div>
+          </div>
+          <div class="route-stat-item">
+            <div class="stat-value" id="stat-distance">0</div>
+            <div class="stat-label">总里程</div>
+          </div>
+          <div class="route-stat-item">
+            <div class="stat-value" id="stat-days">0</div>
+            <div class="stat-label">建议游玩天数</div>
+          </div>
+        </div>
+
+        <h3 class="attractions-heading">景点介绍</h3>
+        <div class="attractions-list" id="attractions-list">
+          <!-- 景点列表将通过JavaScript加载 -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <p>&copy; 2025 广西自然风光智慧管理平台 版权所有</p>
+  </footer>
+
+  <!-- 引入Mapbox JS -->
+  <script src="https://api.mapbox.com/mapbox-gl-js/v3.9.4/mapbox-gl.js"></script>
+
+  <!-- 引入自定义JS -->
+  <!-- 引入模块化JavaScript -->
+  <script src="js/travel-data.js"></script>
+  <script src="js/travel-map.js"></script>
+  <script src="js/travel-ui.js"></script>
+  <script src="travel.js"></script>
+</body>
+
+</html>

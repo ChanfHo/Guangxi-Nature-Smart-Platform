@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>注册页面</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="register-container">
+    <div class="form-container">
+      <h1>注册</h1>
+      <form id="register-form">
+        <div class="form-group">
+          <label for="username">用户名</label>
+          <input type="text" id="username" name="username" placeholder="请输入用户名" required>
+        </div>
+        <div class="form-group">
+          <label for="email">邮箱</label>
+          <input type="email" id="email" name="email" placeholder="请输入邮箱" required>
+        </div>
+        <div class="form-group">
+          <label for="password">密码</label>
+          <input type="password" id="password" name="password" placeholder="请输入密码" required>
+        </div>
+        <div class="form-group">
+          <label for="confirm-password">确认密码</label>
+          <input type="password" id="confirm-password" name="confirm-password" placeholder="请再次输入密码" required>
+        </div>
+        <button type="submit" class="btn">注册</button>
+      </form>
+      <p class="redirect">已有账号？<a href="../login/index.html">登录</a></p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('register-form').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const username = document.getElementById('username').value; // 获取用户名
+      const userEmail = document.getElementById('email').value; // 获取邮箱
+      const password = document.getElementById('password').value; // 获取密码
+      const confirmPassword = document.getElementById('confirm-password').value; // 获取确认密码
+
+      if (password.length < 6) {
+        alert('密码长度不能少于6个字符！');
+        return;
+      }
+
+      if (password !== confirmPassword) {
+        alert('两次输入的密码不一致，请重新输入！');
+        return;
+      }
+
+      const backURL = 'http://localhost:8000/api/user/account/register';
+
+      fetch(backURL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ username, userEmail, password }) // 发送用户名、邮箱和密码
+      })
+        .then(response => {
+          if (!response.ok) {
+            return response.json().then(err => {
+              console.error('后端返回的错误:', err); // 打印后端返回的错误信息
+              throw new Error(`HTTP error! status: ${response.status}`);
+            });
+          }
+          return response.json();
+        })
+        .then(data => {
+          console.log('后端返回的数据:', data);
+          if (data.success) {
+            alert('注册成功！即将跳转到登录页面...');
+            window.location.href = '../login/index.html'; // 跳转到登录页面
+          } else {
+            alert(data.message || '注册失败，请稍后再试！');
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          alert('注册失败：无法连接到服务器，请检查网络连接！');
+        });
+    });
+  </script>
+</body>
+
+</html>

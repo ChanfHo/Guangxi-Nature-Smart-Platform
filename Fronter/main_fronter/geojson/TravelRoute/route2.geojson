@@ -1,0 +1,15 @@
+{
+"type": "FeatureCollection",
+"name": "route2",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "gid": 6, "city": "崇左市", "info": "跨国瀑布气势恢宏，展现壮观的边陲自然奇观", "name": "崇左市德天跨国瀑布景区", "type": "自然景观", "Order": "4", "level": "5A" }, "geometry": { "type": "Point", "coordinates": [ 106.724839, 22.855878 ] } },
+{ "type": "Feature", "properties": { "gid": 186, "city": "崇左市", "info": "历史斜塔与江水相映，传递独特的文化与风光魅力", "name": "左江斜塔景区", "type": "人文景观", "Order": "8", "level": "4A" }, "geometry": { "type": "Point", "coordinates": [ 107.363425, 22.439842 ] } },
+{ "type": "Feature", "properties": { "gid": 182, "city": "崇左市", "info": "清澈江流拥抱青山，呈现自然生态的闲适景致", "name": "龙州县左江景区", "type": "自然景观", "Order": "7", "level": "4A" }, "geometry": { "type": "Point", "coordinates": [ 107.062657, 22.388017 ] } },
+{ "type": "Feature", "properties": { "gid": 222, "city": "百色市", "info": "险峻峡谷与奇异岩石构成的天然探险体验区", "name": "靖西通灵大峡谷景区", "type": "自然景观", "Order": "3", "level": "4A" }, "geometry": { "type": "Point", "coordinates": [ 106.621718, 23.026301 ] } },
+{ "type": "Feature", "properties": { "gid": 8, "city": "河池市", "info": "山水环抱中展现盘曲河道与清新自然的完美融合", "name": "巴马盘阳河景区", "type": "自然景观", "Order": "2", "level": "4A" }, "geometry": { "type": "Point", "coordinates": [ 107.149875, 24.201599 ] } },
+{ "type": "Feature", "properties": { "gid": 22, "city": "河池市", "info": "典型喀斯特地貌与丰富生态形成绝美自然景观", "name": "环江木论喀斯特生态旅游景区", "type": "自然景观", "Order": "1", "level": "4A" }, "geometry": { "type": "Point", "coordinates": [ 108.054311, 25.147772 ] } },
+{ "type": "Feature", "properties": { "gid": 180, "city": "崇左市", "info": "神秘石洞与幽静流水交织，宛如步入人间仙境", "name": "大新龙宫仙境景区", "type": "自然景观", "Order": "5", "level": "4A" }, "geometry": { "type": "Point", "coordinates": [ 107.043099, 22.837714 ] } },
+{ "type": "Feature", "properties": { "gid": 188, "city": "崇左市", "info": "原始生态环境中珍稀猴群栖息的野生保护区", "name": "崇左白头叶猴国家自然保护区景区", "type": "自然景观", "Order": "6", "level": "4A" }, "geometry": { "type": "Point", "coordinates": [ 106.957203, 22.470938 ] } }
+]
+}

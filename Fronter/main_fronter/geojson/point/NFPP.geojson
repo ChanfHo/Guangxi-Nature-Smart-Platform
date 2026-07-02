@@ -1,0 +1,28 @@
+{
+"type": "FeatureCollection",
+"name": "NFPP",
+"features": [
+{ "type": "Feature", "properties": { "NAME": "广西十万大山国家森林公园" }, "geometry": { "type": "Point", "coordinates": [ 107.86873356500007, 21.897076045000063 ] } },
+{ "type": "Feature", "properties": { "NAME": "广西龙潭国家森林公园" }, "geometry": { "type": "Point", "coordinates": [ 109.981094, 23.538046 ] } },
+{ "type": "Feature", "properties": { "NAME": "广西飞龙湖国家森林公园" }, "geometry": { "type": "Point", "coordinates": [ 111.426425395000081, 23.851363130000038 ] } },
+{ "type": "Feature", "properties": { "NAME": "广西九龙瀑布群国家森林公园" }, "geometry": { "type": "Point", "coordinates": [ 109.151767025000083, 23.05201444000005 ] } },
+{ "type": "Feature", "properties": { "NAME": "广西良凤江国家森林公园" }, "geometry": { "type": "Point", "coordinates": [ 108.284202735000065, 22.722788435000041 ] } },
+{ "type": "Feature", "properties": { "NAME": "广西平天山国家森林公园" }, "geometry": { "type": "Point", "coordinates": [ 109.481744080000055, 23.193818670000041 ] } },
+{ "type": "Feature", "properties": { "NAME": "广西大容山国家森林公园" }, "geometry": { "type": "Point", "coordinates": [ 110.287589035000053, 22.844150445000025 ] } },
+{ "type": "Feature", "properties": { "NAME": "广西太平狮山国家森林公园" }, "geometry": { "type": "Point", "coordinates": [ 110.748530300000084, 23.618059440000025 ] } },
+{ "type": "Feature", "properties": { "NAME": "广西龙潭国家森林公园" }, "geometry": { "type": "Point", "coordinates": [ 109.976425560000052, 23.537022860000036 ] } },
+{ "type": "Feature", "properties": { "NAME": "广西龙滩大峡谷国家森林公园" }, "geometry": { "type": "Point", "coordinates": [ 107.161820995000085, 24.988161 ] } },
+{ "type": "Feature", "properties": { "NAME": "广西黄猄洞天坑国家森林公园" }, "geometry": { "type": "Point", "coordinates": [ 106.372212170000068, 24.810412960000065 ] } },
+{ "type": "Feature", "properties": { "NAME": "广西元宝山国家森林公园" }, "geometry": { "type": "Point", "coordinates": [ 109.174244190000081, 25.391853250000054 ] } },
+{ "type": "Feature", "properties": { "NAME": "广西红茶沟国家森林公园" }, "geometry": { "type": "Point", "coordinates": [ 109.345421785000042, 25.252896675000045 ] } },
+{ "type": "Feature", "properties": { "NAME": "广西三门江国家森林公园" }, "geometry": { "type": "Point", "coordinates": [ 109.504351110000073, 24.332554200000061 ] } },
+{ "type": "Feature", "properties": { "NAME": "广西三门江国家森林公园" }, "geometry": { "type": "Point", "coordinates": [ 109.757602635000069, 24.217465235000077 ] } },
+{ "type": "Feature", "properties": { "NAME": "广西龙胜温泉国家森林公园" }, "geometry": { "type": "Point", "coordinates": [ 110.206313785000077, 25.897868620000054 ] } },
+{ "type": "Feature", "properties": { "NAME": "广西桂林国家森林公园" }, "geometry": { "type": "Point", "coordinates": [ 110.241583705000039, 25.225144865000061 ] } },
+{ "type": "Feature", "properties": { "NAME": "广西阳朔国家森林公园" }, "geometry": { "type": "Point", "coordinates": [ 110.599555580000072, 24.982771070000069 ] } },
+{ "type": "Feature", "properties": { "NAME": "广西八角寨国家森林公园" }, "geometry": { "type": "Point", "coordinates": [ 110.729821190000052, 26.284981965000043 ] } },
+{ "type": "Feature", "properties": { "NAME": "广西姑婆山国家森林公园" }, "geometry": { "type": "Point", "coordinates": [ 111.556720270000085, 24.619557560000032 ] } },
+{ "type": "Feature", "properties": { "NAME": "广西大桂山国家森林公园" }, "geometry": { "type": "Point", "coordinates": [ 111.741162785000085, 24.144842910000023 ] } },
+{ "type": "Feature", "properties": { "NAME": "广西大瑶山国家森林公园" }, "geometry": { "type": "Point", "coordinates": [ 110.383801730000073, 24.237095885000031 ] } }
+]
+}

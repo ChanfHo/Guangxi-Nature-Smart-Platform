@@ -1,0 +1,14 @@
+{
+"type": "FeatureCollection",
+"name": "route3",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "gid": 93, "city": "南宁市", "info": "青翠山林与清新空气构成的生态休闲和观光胜地", "name": "南宁大明山风景旅游区", "type": "自然景观", "Order": "2", "level": "4A" }, "geometry": { "type": "Point", "coordinates": [ 108.261609, 22.864596 ] } },
+{ "type": "Feature", "properties": { "gid": 95, "city": "南宁市", "info": "以铜鼓造型建筑著称，馆内展示广西各民族的服饰、乐器、住宅等，全面反映当地民族文化。", "name": "广西民族博物馆", "type": "人文景观", "Order": "6", "level": "4A" }, "geometry": { "type": "Point", "coordinates": [ 108.397786, 22.777188 ] } },
+{ "type": "Feature", "properties": { "gid": 1, "city": "南宁市", "info": "青山绿水中融合宗教文化与自然景致的名胜区", "name": "南宁青秀山风景旅游区", "type": "自然-人文综合景观", "Order": "4", "level": "5A" }, "geometry": { "type": "Point", "coordinates": [ 108.347772, 22.832645 ] } },
+{ "type": "Feature", "properties": { "gid": 92, "city": "南宁市", "info": "丰富植物种类与生态展示，传播绿色健康科普理念", "name": "广西药用植物园", "type": "自然景观", "Order": "3", "level": "4A" }, "geometry": { "type": "Point", "coordinates": [ 108.372926, 22.856422 ] } },
+{ "type": "Feature", "properties": { "gid": 112, "city": "南宁市", "info": "各式园林建筑和花卉景观构成的都市生态休闲公园", "name": "南宁园博园景区", "type": "人文景观", "Order": "7", "level": "4A" }, "geometry": { "type": "Point", "coordinates": [ 108.476959, 22.725302 ] } },
+{ "type": "Feature", "properties": { "gid": 100, "city": "南宁市", "info": "湖光山色中民谣悠扬，展现都市人文与自然和谐景致", "name": "南宁市民歌湖景区", "type": "自然-人文综合景观", "Order": "5", "level": "4A" }, "geometry": { "type": "Point", "coordinates": [ 108.370937, 22.812421 ] } },
+{ "type": "Feature", "properties": { "gid": 379, "city": "南宁市", "info": "保存完好的明清古镇，展现壮族等民族的传统生活方式，曾被徐霞客盛赞为“世外桃源”。 ", "name": "南宁市江南区扬美古镇景区", "type": "人文景观", "Order": "1", "level": "3A" }, "geometry": { "type": "Point", "coordinates": [ 108.060394, 22.841893 ] } }
+]
+}

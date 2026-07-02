@@ -1,0 +1,183 @@
+{
+    "type": "FeatureCollection",
+    "name": "route1",
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+        }
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "gid": 2,
+                "city": "桂林市",
+                "info": "奇峰异石与清流漓江构筑的世界级山水画卷",
+                "name": "桂林漓江景区",
+                "type": "自然景观",
+                "Order": "4",
+                "level": "5A"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    110.426997,
+                    25.149898
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "gid": 147,
+                "city": "桂林市",
+                "info": "古街风情浓郁，历史韵味与现代文艺巧妙交融",
+                "name": "阳朔西街景区",
+                "type": "人文景观",
+                "Order": "7",
+                "level": "4A"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    110.489739,
+                    24.77967
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "gid": 152,
+                "city": "桂林市",
+                "info": "壮丽层叠梯田展现田园诗意与民族农业智慧",
+                "name": "龙胜龙脊梯田景区",
+                "type": "自然景观",
+                "Order": "1",
+                "level": "4A"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    110.006883,
+                    25.801085
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "gid": 153,
+                "city": "桂林市",
+                "info": "溶洞奇观与石钟乳光影交织，奇幻而神秘",
+                "name": "桂林银子岩旅游度假区",
+                "type": "自然景观",
+                "Order": "9",
+                "level": "4A"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    110.434651,
+                    24.640129
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "gid": 170,
+                "city": "桂林市",
+                "info": "山水风光与人文景致完美融合的休闲胜地",
+                "name": "阳朔三千漓中国山水人文度假区",
+                "type": "自然-人文综合景观",
+                "Order": "5",
+                "level": "4A"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    110.534996,
+                    24.922809
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "gid": 4,
+                "city": "桂林市",
+                "info": "名山独秀、城影相映，登高远眺尽收桂林全景",
+                "name": "桂林独秀峰-王城景区",
+                "type": "自然-人文综合景观",
+                "Order": "3",
+                "level": "5A"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    110.294623,
+                    25.284375
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "gid": 281,
+                "city": "桂林市",
+                "info": "依山傍水、云雾缭绕，勾勒出诗情画意的天然秘境",
+                "name": "诗画遇龙景区",
+                "type": "自然景观",
+                "Order": "6",
+                "level": "4A"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    110.395185,
+                    24.81192
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "gid": 149,
+                "city": "桂林市",
+                "info": "古老水利工程与自然景观交织，见证千年历史智慧",
+                "name": "兴安灵渠景区",
+                "type": "人文景观",
+                "Order": "2",
+                "level": "4A"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    110.679902,
+                    25.601215
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "gid": 145,
+                "city": "桂林市",
+                "info": "古道遗韵与潺潺潭水共同演绎历史与自然传奇",
+                "name": "阳朔图腾古道-聚龙潭景区",
+                "type": "自然-人文综合景观",
+                "Order": "8",
+                "level": "4A"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    110.478356,
+                    24.72766
+                ]
+            }
+        }
+    ]
+}

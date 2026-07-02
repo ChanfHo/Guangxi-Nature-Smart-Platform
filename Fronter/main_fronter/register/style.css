@@ -1,0 +1,155 @@
+/* 全局样式 */
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  background: url('background.jpeg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.register-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('background.jpeg') fixed no-repeat;
+  background-size: cover;
+}
+
+.form-container {
+  width: 300px;
+  padding: 40px;
+  text-align: center;
+  position: relative;
+  z-index: 100;
+  background: inherit;
+  border-radius: 18px;
+  overflow: hidden; /* 隐藏多余的模糊效果 */
+}
+
+.form-container::before {
+  content: "";
+  width: calc(100% + 20px);
+  height: calc(100% + 20px);
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  overflow: hidden;
+  background: inherit;
+  box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.25);
+  filter: blur(6px);
+  z-index: -1;
+}
+
+h1 {
+  font-size: 18px;
+  font-weight: 400;
+  color: #3d5245;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #3d5245;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  font-size: 14px;
+  color: #3d5245;
+}
+
+input::placeholder {
+  color: #3d5245;
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid rgba(57, 88, 69, 0.4);
+}
+
+/* 按钮样式 */
+.btn {
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(57, 88, 69, 0.4);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: 0.4s;
+}
+
+.btn:hover {
+  background-color: rgba(12, 80, 38, 0.67);
+}
+
+.btn::before,
+.btn::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 100%;
+  background: rgba(179, 255, 210, 0.5);
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: skewX(-15deg);
+  filter: blur(30px);
+  overflow: hidden;
+  transform: translateX(-100px);
+}
+
+.btn::after {
+  width: 40px;
+  background: rgba(179, 255, 210, 0.3);
+  left: 60px;
+  opacity: 0;
+  filter: blur(5px);
+}
+
+.btn:hover::before {
+  transition: 1s;
+  transform: translateX(320px);
+  opacity: 0.7;
+}
+
+.btn:hover::after {
+  transition: 1s;
+  transform: translateX(320px);
+  opacity: 1;
+}
+
+/* 注册页面底部提示文字 */
+.redirect {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #333;
+}
+
+.redirect a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.redirect a:hover {
+  text-decoration: underline;
+}

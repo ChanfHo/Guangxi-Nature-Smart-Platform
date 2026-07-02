@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>广西自然风光智慧服务平台</title>
+  <!-- 引入 Mapbox CSS -->
+  <link href="https://api.mapbox.com/mapbox-gl-js/v3.9.4/mapbox-gl.css" rel="stylesheet">
+  <!-- 引入自定义 CSS -->
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/map-container.css">
+  <link rel="stylesheet" href="css/chatbot.css">
+  <link rel="stylesheet" href="css/button.css">
+  <link rel="stylesheet" href="css/legend.css">
+  <link rel="stylesheet" href="css/feedback.css">
+</head>
+
+<body>
+  <!-- 顶部导航栏 -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="icons/logo2.png" alt="Logo">
+      <span>广西自然风光智慧服务平台</span>
+    </div>
+    <nav class="menu">
+      <a href="#" id="map-vis-menu" class="menu-active">一览八桂</a>
+      <a href="#" id="data-vis-menu">探寻百越</a>
+      <a href="./travel/index.html" id="travel-menu">行旅壮乡</a>
+      <a id="feedback-button" class="feedback-btn">意见反馈</a>
+      <a href="#" id="show-chatbot">智能小桂</a>
+    </nav>
+
+    <!-- 将原来的 auth div 修改为以下内容 -->
+    <div class="auth">
+      <!-- 未登录时显示 -->
+      <div class="auth-logged-out">
+        <a href="./login/index.html">登录</a> | <a href="./register/index.html">注册</a>
+      </div>
+      <!-- 登录后显示 -->
+      <div class="auth-logged-in" style="display: none;">
+        <span class="username"></span>
+        <img class="user-avatar" src="icons/default-avatar.png" alt="用户头像">
+        <a href="#" id="logout-button" class="logout-button">退出登录</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 地图展示区域 -->
+  <!-- 地图展示区域 -->
+  <main class="map-container">
+    <!-- 地图切换按钮 -->
+    <div id="map-buttons" class="map-buttons button-group visible">
+      <button data-map="0" class="active">
+        <img src="icons/mountain.png" alt="山" class="button-icon"> 山峦妙染
+      </button>
+      <button data-map="1">
+        <img src="icons/river.png" alt="水" class="button-icon"> 水韵船谣
+      </button>
+      <button data-map="2">
+        <img src="icons/forest.png" alt="林" class="button-icon"> 林樾卷轴
+      </button>
+      <button data-map="3">
+        <img src="icons/cropland.png" alt="田" class="button-icon"> 田野赞歌
+      </button>
+      <button data-map="4">
+        <img src="icons/sea.png" alt="海" class="button-icon"> 海波交响
+      </button>
+    </div>
+
+    <!-- 数据可视化按钮 -->
+    <div id="data-buttons" class="map-buttons data-buttons button-group">
+      <button data-visual="0">
+        <img src="icons/mountain.png" alt="山" class="button-icon"> 著名山体景观
+      </button>
+      <button data-visual="1">
+        <img src="icons/river.png" alt="水" class="button-icon"> 著名水体景观
+      </button>
+      <button data-visual="2">
+        <img src="icons/forest.png" alt="林" class="button-icon"> 国家级自然保护区
+      </button>
+      <button data-visual="3">
+        <img src="icons/cropland.png" alt="田" class="button-icon"> 著名农田景观
+      </button>
+      <button data-visual="4">
+        <img src="icons/sea.png" alt="海" class="button-icon"> 海洋保护区
+      </button>
+      <button data-visual="5">
+        <img src="icons/森林.png" alt="林" class="button-icon"> 国家森林公园
+      </button>
+      <button data-visual="6">
+        <img src="icons/地质.png" alt="地质" class="button-icon"> 国家地质公园
+      </button>
+      <button data-visual="7">
+        <img src="icons/5A.png" alt="5A" class="button-icon"> 广西5A级景区
+      </button>
+      <button data-visual="8">
+        <img src="icons/4A.png" alt="4A" class="button-icon"> 广西4A级景区
+      </button>
+    </div>
+
+    <div class="map-slider">
+      <!-- 每个地图作为一个 slide -->
+      <div id="map1" class="map-slide current"></div>
+      <div id="map2" class="map-slide"></div>
+      <div id="map3" class="map-slide"></div>
+      <div id="map4" class="map-slide"></div>
+      <div id="map5" class="map-slide"></div>
+    </div>
+
+
+    <!-- 地图图例 -->
+    <div class="map-legend mountain-legend" id="mountain-legend">
+      <div class="map-legend-title">海拔</div>
+      <div class="legend-gradient mountain-gradient"></div>
+      <div class="legend-labels">
+        <span>-3m</span>
+        <span></span>
+        <span>2166m</span>
+      </div>
+    </div>
+
+    <div class="map-legend water-legend" id="water-legend">
+      <div class="map-legend-title">海拔</div>
+      <div class="legend-gradient water-gradient"></div>
+      <div class="legend-labels">
+        <span>-3m</span>
+        <span></span>
+        <span>2166m</span>
+      </div>
+    </div>
+
+    <div class="map-legend forest-legend" id="forest-legend">
+      <div class="map-legend-title">林地类型</div>
+      <div class="category-legend-item">
+        <div class="color-block forest-color"></div>
+        <span>森林</span>
+      </div>
+      <div class="category-legend-item">
+        <div class="color-block shrub-color"></div>
+        <span>灌木</span>
+      </div>
+    </div>
+
+    <div class="map-legend cropland-legend" id="cropland-legend">
+      <div class="map-legend-title">农田</div>
+      <div class="category-legend-item">
+        <div class="color-block cropland-color"></div>
+        <span>农田</span>
+      </div>
+    </div>
+
+
+    <!-- 聊天机器人图标 -->
+    <div id="chatbot-icon" class="chatbot-icon">
+      <img src="icons/chatbot.png" alt="Chatbot">
+    </div>
+
+    <!-- 聊天窗口 -->
+    <div id="chatbot-window" class="chatbot-window">
+      <div class="chatbot-header">
+        <span>小桂智慧助手</span>
+        <button id="close-chatbot" class="close-btn">&times;</button>
+      </div>
+      <div id="chatbot-messages" class="chatbot-messages">
+        <!-- 聊天消息动态插入 -->
+      </div>
+      <div class="chatbot-input">
+        <input id="chatbot-input" type="text" placeholder="请向小桂提出您的需求...">
+        <button id="send-chatbot" class="send-btn">发送</button>
+      </div>
+    </div>
+
+    <!-- 意见反馈弹窗 -->
+    <div id="feedback-overlay" class="feedback-overlay">
+      <div class="feedback-container">
+        <div class="feedback-header">
+          <div class="feedback-title">意见反馈</div>
+          <button id="feedback-close" class="feedback-close">×</button>
+        </div>
+
+        <form id="feedback-form" class="feedback-form">
+          <div class="feedback-input-group">
+            <label class="feedback-label" for="feedback-content">
+              您的反馈意见
+            </label>
+            <textarea id="feedback-content" class="feedback-textarea" placeholder="请输入您的意见或建议..."></textarea>
+            <div id="feedback-content-error" class="feedback-error" style="display: none;"></div>
+          </div>
+
+          <div class="feedback-input-group">
+            <label class="feedback-label" for="feedback-phone">
+              联系方式 <span class="feedback-optional">(选填)</span>
+            </label>
+            <input type="tel" id="feedback-phone" class="feedback-input" placeholder="请输入您的手机号码" />
+          </div>
+
+          <div id="feedback-message" class="feedback-message"></div>
+
+          <div class="feedback-buttons">
+            <button type="button" id="feedback-cancel" class="feedback-cancel">取消</button>
+            <button type="submit" class="feedback-submit">提交</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+    <!-- 添加审图号标识 -->
+    <div class="footer-note" style="text-align:right ">
+      <p>地图数据来源：1：100万公众版基础地理信息数据（2021） </p>
+      <p>审图号：GS（2016）2556号，底图未修改</p>
+    </div>
+
+  </main>
+
+  <!-- 引入 Mapbox JS -->
+  <script src="https://api.mapbox.com/mapbox-gl-js/v3.9.4/mapbox-gl.js"></script>
+  <script src="https://unpkg.com/@turf/turf/turf.min.js"></script>
+  <!-- 引入自定义 JS -->
+  <script src="index.js" type="module"></script>
+  <!-- 在body底部引用 -->
+  <script src="js/visualization-controls.js" type="module"></script>
+  <script src="chat.js" type="module"></script>
+  <script src="js/feedback.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="chatToMap.js"></script>
+  <!-- <script src="js/routing.js"></script> -->
+
+  <script>  // 页面加载完成后检查用户是否已登录
+    document.addEventListener('DOMContentLoaded', function() {
+      // 检查本地存储中是否有用户信息
+      const userInfo = localStorage.getItem('userInfo');
+      
+      if (userInfo) {
+        // 用户已登录
+        const user = JSON.parse(userInfo);
+        
+        // 显示用户信息
+        document.querySelector('.auth-logged-out').style.display = 'none';
+        document.querySelector('.auth-logged-in').style.display = 'flex';
+        document.querySelector('.username').textContent = user.username || '用户';
+        
+        // 如果有用户头像URL，可以替换默认头像
+        if (user.avatarUrl) {
+          document.querySelector('.user-avatar').src = user.avatarUrl;
+        }
+      }
+
+      //检查登出逻辑
+      const logoutBtn = document.getElementById('logout-button');
+      if (logoutBtn) {
+        logoutBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          localStorage.removeItem('userInfo');
+          location.reload();
+        });
+      }
+    });</script>
+</body>
+
+</html>

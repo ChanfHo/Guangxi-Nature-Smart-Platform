@@ -1,0 +1,13 @@
+{
+"type": "FeatureCollection",
+"name": "route4",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "gid": 124, "city": "北海市", "info": "火山遗迹与海蚀地貌构成的独特地质探秘区", "name": "北海涠洲岛国家地质公园鳄鱼山景区", "type": "自然景观", "Order": "6", "level": "4A" }, "geometry": { "type": "Point", "coordinates": [ 109.097107, 21.012863 ] } },
+{ "type": "Feature", "properties": { "gid": 244, "city": "钦州市", "info": "海湾风情与细腻海岸线展现出独特的自然与人文魅力", "name": "钦州三娘湾景区", "type": "自然景观", "Order": "3", "level": "4A" }, "geometry": { "type": "Point", "coordinates": [ 108.756362, 21.622656 ] } },
+{ "type": "Feature", "properties": { "gid": 608, "city": "防城港市", "info": "火山遗迹与岛屿景观交融，展示别样的地质演变奇观", "name": "防城港火山岛景区", "type": "自然景观", "Order": "2", "level": "2A" }, "geometry": { "type": "Point", "coordinates": [ 108.566627, 21.701207 ] } },
+{ "type": "Feature", "properties": { "gid": 125, "city": "北海市", "info": "历经岁月洗礼的古城街区彰显浓厚的海洋文化底蕴", "name": "北海老城历史文化旅游区", "type": "人文景观", "Order": "5", "level": "4A" }, "geometry": { "type": "Point", "coordinates": [ 109.108311, 21.485576 ] } },
+{ "type": "Feature", "properties": { "gid": 534, "city": "钦州市", "info": "多岛环抱下的原生态海上乐园，生态景观独具魅力", "name": "钦州龙门群岛海上生态公园", "type": "自然景观", "Order": "1", "level": "3A" }, "geometry": { "type": "Point", "coordinates": [ 108.696711, 22.332899 ] } },
+{ "type": "Feature", "properties": { "gid": 419, "city": "北海市", "info": "奇石林立与原始海岸线构成的自然遗韵，见证历史风云变幻", "name": "合浦县古海角景区", "type": "自然景观", "Order": "4", "level": "3A" }, "geometry": { "type": "Point", "coordinates": [ 109.186119, 21.670321 ] } }
+]
+}

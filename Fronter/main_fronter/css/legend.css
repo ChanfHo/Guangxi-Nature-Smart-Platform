@@ -1,0 +1,102 @@
+/* 地图图例样式 */
+.map-legend {
+  position: absolute;
+  bottom: 40px;
+  right: 10px;
+  background-color: rgba(255, 255, 255, 0);
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0);
+  z-index: 10;
+  width: 180px;
+  display: none;
+  z-index :100;
+}
+
+.map-legend-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.legend-gradient {
+  height: 20px;
+  width: 100%;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  background-size: cover;
+  background-position: center;
+}
+
+.legend-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+/* 山地图例 */
+.mountain-legend {
+  display: none;
+}
+
+.mountain-gradient {
+  background-image: url('../legend/山图高程.png');
+}
+
+/* 水域图例 */
+.water-legend {
+  display: none;
+}
+
+.water-gradient {
+  background-image: url('../legend/水图高程.png');
+}
+
+/* 显示当前地图的图例 */
+.show-legend {
+  display: block;
+}
+
+
+
+/* 类别图例样式 - 新增 */
+.category-legend-item {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
+
+.color-block {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+}
+
+/* 林地图例 */
+.forest-legend {
+  display: none;
+}
+
+.forest-color {
+  background-color: #91BE78;
+}
+
+.shrub-color {
+  background-color: #277705;
+}
+
+/* 农田图例 */
+.cropland-legend {
+  display: none;
+}
+
+.cropland-color {
+  background-color: #DFBE43;
+}
+
+/* 显示当前地图的图例 */
+.show-legend {
+  display: block;
+}

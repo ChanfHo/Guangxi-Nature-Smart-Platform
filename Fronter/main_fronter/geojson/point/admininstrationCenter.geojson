@@ -1,0 +1,21 @@
+{
+"type": "FeatureCollection",
+"name": "admininstrationCenter",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "name": "南宁市", "property": 1.0, "x": 108.372634, "y": 22.823831 }, "geometry": { "type": "Point", "coordinates": [ 108.372634, 22.823831 ] } },
+{ "type": "Feature", "properties": { "name": "桂林市", "property": 0.0, "x": 110.186217, "y": 25.241838 }, "geometry": { "type": "Point", "coordinates": [ 110.186217, 25.241838 ] } },
+{ "type": "Feature", "properties": { "name": "柳州市", "property": 0.0, "x": 109.43497, "y": 24.332413 }, "geometry": { "type": "Point", "coordinates": [ 109.43497, 24.332413 ] } },
+{ "type": "Feature", "properties": { "name": "贺州市", "property": 0.0, "x": 111.573767, "y": 24.410098 }, "geometry": { "type": "Point", "coordinates": [ 111.573767, 24.410098 ] } },
+{ "type": "Feature", "properties": { "name": "梧州市", "property": 0.0, "x": 111.285466, "y": 23.48261 }, "geometry": { "type": "Point", "coordinates": [ 111.285466, 23.48261 ] } },
+{ "type": "Feature", "properties": { "name": "百色市", "property": 0.0, "x": 106.625404, "y": 23.908767 }, "geometry": { "type": "Point", "coordinates": [ 106.625404, 23.908767 ] } },
+{ "type": "Feature", "properties": { "name": "崇左市", "property": 0.0, "x": 107.371503, "y": 22.382932 }, "geometry": { "type": "Point", "coordinates": [ 107.371503, 22.382932 ] } },
+{ "type": "Feature", "properties": { "name": "来宾市", "property": 0.0, "x": 109.227711, "y": 23.756266 }, "geometry": { "type": "Point", "coordinates": [ 109.227711, 23.756266 ] } },
+{ "type": "Feature", "properties": { "name": "防城港市", "property": 0.0, "x": 108.361141, "y": 21.693048 }, "geometry": { "type": "Point", "coordinates": [ 108.361141, 21.693048 ] } },
+{ "type": "Feature", "properties": { "name": "钦州市", "property": 0.0, "x": 108.660946, "y": 21.986574 }, "geometry": { "type": "Point", "coordinates": [ 108.660946, 21.986574 ] } },
+{ "type": "Feature", "properties": { "name": "北海市", "property": 0.0, "x": 109.126778, "y": 21.487089 }, "geometry": { "type": "Point", "coordinates": [ 109.126778, 21.487089 ] } },
+{ "type": "Feature", "properties": { "name": "玉林市", "property": 0.0, "x": 110.187436, "y": 22.660151 }, "geometry": { "type": "Point", "coordinates": [ 110.187436, 22.660151 ] } },
+{ "type": "Feature", "properties": { "name": "贵港市", "property": 0.0, "x": 109.6056, "y": 23.117471 }, "geometry": { "type": "Point", "coordinates": [ 109.6056, 23.117471 ] } },
+{ "type": "Feature", "properties": { "name": "河池市", "property": 0.0, "x": 108.091807, "y": 24.698821 }, "geometry": { "type": "Point", "coordinates": [ 108.091807, 24.698821 ] } }
+]
+}

@@ -1,0 +1,71 @@
+/* 地图容器 */
+.map-container {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 60px); /* 减去导航栏高度 */
+  z-index: 1; /* 地图图层较低 */
+}
+
+.map-slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.map-slide {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  transition: left 0.5s ease-in-out;
+}
+
+.map-slide.current {
+  left: 0;
+}
+
+.map-slide.previous {
+  left: -100%;
+}
+
+.map-slide.next {
+  left: 100%;
+}
+/* 地图切换按钮 */
+.map-buttons {
+  position: absolute;
+  top: 20px; /* 将按钮放置在地图顶部 */
+  left: 20px;
+  z-index: 10; /* 按钮图层较高 */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.map-buttons button {
+  background-color: #005bac;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+.map-buttons button:hover {
+  background-color: #003f7f;
+}
+
+
+.map-buttons button img.button-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.map-buttons button.active {
+  background-color: #003f7f;
+  font-weight: bold;
+}

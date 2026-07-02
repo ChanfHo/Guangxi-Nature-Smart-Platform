@@ -1,0 +1,262 @@
+/* 全局样式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* 顶部导航栏 */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #005bac;
+  color: white;
+  padding: 10px 20px;
+}
+
+.navbar .logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.navbar .menu a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.navbar .auth a {
+  color: white;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+/* 地图容器 */
+.map-container {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 60px); /* 减去导航栏高度 */
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+}
+
+/* 功能按钮 */
+.buttons {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.button:hover {
+  transform: scale(1.1);
+}
+
+.button img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 5px;
+}
+
+.button span {
+  font-size: 14px;
+  color: #333;
+}
+
+/* 聊天机器人图标 */
+.chatbot-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #005bac;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.chatbot-icon img {
+  width: 40px;
+  height: 40px;
+}
+
+/* 地图容器 */
+.map-container {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 60px); /* 减去导航栏高度 */
+  transition: width 0.3s ease; /* 添加平滑过渡效果 */
+}
+
+.map-container.chat-open {
+  width: 70%; /* 当聊天窗口打开时，地图宽度调整为 70% */
+}
+
+/* 聊天窗口 */
+.chatbot-window {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 30%; /* 占据右侧 30% 的宽度 */
+  height: 100%;
+  background-color: white;
+  border-left: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  transform: translateX(100%); /* 初始状态隐藏在右侧 */
+  transition: transform 0.3s ease; /* 添加平滑过渡效果 */
+}
+
+.chatbot-window.open {
+  transform: translateX(0); /* 聊天窗口滑入 */
+}
+
+.chatbot-header {
+  background-color: #005bac;
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chatbot-header .close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.chatbot-messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  background-color: #f9f9f9;
+}
+
+.chatbot-input {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.chatbot-input input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+.chatbot-input .send-btn {
+  background-color: #005bac;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+/* 聊天消息 */
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.message.user {
+  justify-content: flex-start; /* 用户消息靠左 */
+}
+
+.message.bot {
+  justify-content: flex-end; /* 机器人消息靠右 */
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+
+.bubble {
+  max-width: 70%;
+  padding: 10px;
+  border-radius: 15px;
+  font-size: 14px;
+  line-height: 1.5;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.message.user .bubble {
+  background-color: #005bac;
+  color: white;
+  border-top-left-radius: 0;
+  margin-left: 10px; /* 气泡与头像的间距 */
+}
+
+.message.bot .bubble {
+  background-color: #f1f1f1;
+  color: #333;
+  border-top-right-radius: 0;
+  margin-right: 10px; /* 气泡与头像的间距 */
+}
+
+/* 气泡尾部 */
+.message.user .bubble::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: -10px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent #005bac transparent transparent;
+}
+
+.message.bot .bubble::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  right: -10px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent #f1f1f1;
+}
+

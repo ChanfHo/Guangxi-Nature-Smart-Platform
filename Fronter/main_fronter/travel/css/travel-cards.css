@@ -1,0 +1,458 @@
+/**
+ * 广西旅游路线推荐 - 卡片样式
+ * 文件路径: /home/ubuntu/ComputerDesign/Fronter/main_fronter/travel/css/travel-cards.css
+ */
+
+/* ---------- 全局变量与基础样式 ---------- */
+:root {
+  /* 主题颜色 */
+  --route1-color: #4CAF50;
+  --route2-color: #2196F3;
+  --route3-color: #FF9800;
+  --route4-color: #E91E63;
+  --text-dark: #333333;
+  --text-light: #ffffff;
+  --background-light: #f5f5f5;
+  --background-dark: #212121;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+  --overlay-color: rgba(0, 0, 0, 0.6);
+  --glass-background: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.18);
+  
+  /* 间距 */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  
+  /* 圆角 */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  
+  /* 动画时间 */
+  --transition-fast: 0.2s;
+  --transition-normal: 0.4s;
+  --transition-slow: 0.6s;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: var(--background-light);
+  color: var(--text-dark);
+}
+
+/* ---------- 主地图容器样式 ---------- */
+.main-map-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 1;
+}
+
+#main-map {
+  width: 100%;
+  height: 100%;
+}
+
+/* Mapbox控件样式调整 */
+.mapboxgl-ctrl-top-right {
+  top: 70px;
+}
+
+/* ---------- 路线选择器样式 ---------- */
+.map-route-selector {
+  position: absolute;
+  top: 80px;
+  left: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: var(--radius-md);
+  box-shadow: 0 2px 10px var(--shadow-color);
+  padding: var(--space-md);
+  z-index: 10;
+  max-width: 300px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.selector-title {
+  font-weight: bold;
+  margin-bottom: var(--space-sm);
+  color: var(--text-dark);
+  font-size: 16px;
+}
+
+.selector-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.selector-option {
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  background-color: #f0f0f0;
+  font-size: 14px;
+}
+
+.selector-option:hover {
+  background-color: #e0e0e0;
+}
+
+.selector-option.active {
+  color: white;
+  font-weight: 500;
+}
+
+.selector-option[data-route="1"].active {
+  background-color: var(--route1-color);
+}
+
+.selector-option[data-route="2"].active {
+  background-color: var(--route2-color);
+}
+
+.selector-option[data-route="3"].active {
+  background-color: var(--route3-color);
+}
+
+.selector-option[data-route="4"].active {
+  background-color: var(--route4-color);
+}
+
+/* ---------- 向下滚动指示器样式 ---------- */
+.scroll-down-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  z-index: 10;
+  opacity: 1;
+  transition: opacity var(--transition-normal);
+}
+
+.scroll-down-text {
+  margin-bottom: var(--space-sm);
+  font-size: 14px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.scroll-down-arrow {
+  font-size: 24px;
+  animation: bounce 2s infinite;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* ---------- 路线卡片区域样式 ---------- */
+.route-container {
+  position: relative;
+  padding: 100px var(--space-xl) var(--space-xl);
+  min-height: 100vh;
+  z-index: 2;
+  background-color: rgba(245, 245, 245, 0.2);
+}
+
+.main-title {
+  font-size: 2.5rem;
+  color: var(--text-dark);
+  text-align: center;
+  margin-bottom: var(--space-md);
+}
+
+.main-description {
+  font-size: 1.2rem;
+  color: var(--text-dark);
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto var(--space-xl);
+}
+
+/* ---------- 路线卡片网格 ---------- */
+.routes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-xl);
+  max-width: 1500px;
+  /* height: 2000px; */
+  margin: 0 auto;
+}
+
+.route-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  cursor: pointer;
+  height: 300px;
+  opacity: 0;
+  transform: translateY(20px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.route-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.route-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.1) 60%);
+  z-index: 1;
+}
+
+.route-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: var(--space-xl);
+  color: var(--text-light);
+  z-index: 2;
+}
+
+.route-title {
+  margin-bottom: var(--space-xs);
+}
+
+.route-theme {
+  font-size: 1rem;
+  margin-bottom: var(--space-md);
+  opacity: 1;
+  color: var(--text-light);
+}
+.route-description {
+  font-size: 0.9rem;
+  margin-bottom: var(--space-md);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.view-route-btn {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: var(--text-light);
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  transition: all var(--transition-fast);
+}
+
+.view-route-btn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* 路线卡片颜色主题 */
+#route1 {
+  background: linear-gradient(45deg, var(--route1-color), #81C784);
+}
+
+#route2 {
+  background: linear-gradient(45deg, var(--route2-color), #64B5F6);
+}
+
+#route3 {
+  background: linear-gradient(45deg, var(--route3-color), #FFB74D);
+}
+
+#route4 {
+  background: linear-gradient(45deg, var(--route4-color), #F06292);
+}
+
+
+/* 路线主题颜色调整 - 所有路线使用更亮的颜色 */
+/* 路线一：山水画廊 - 亮绿色 */
+#route1 .route-theme {
+  color: #66BB6A; /* 亮绿色，对应"山水画廊" */
+}
+
+/* 路线二：跨国秘境 - 亮蓝色 - 保留现有的设置并增加权重 */
+#route2 .route-theme {
+  color: #42A5F5; /* 亮蓝色，对应"跨国秘境" */
+  font-weight: 400;
+}
+
+/* 路线三：绿城生态 - 亮橙色 */
+#route3 .route-theme {
+  color: #FFA726; /* 亮橙色，对应"绿城生态" */
+  font-weight: 400;
+}
+
+/* 路线四：滨海风情 - 亮粉色 */
+#route4 .route-theme {
+  color: #EC407A; /* 亮粉色，对应"滨海风情" */
+  font-weight: 400;
+}
+
+
+#route2.route-title.h2{
+  /* 调字体 */
+  font-size: 1rem;
+}
+/* ---------- 背景容器样式 ---------- */
+.background-container {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 60px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+  
+}
+
+.bg-image.active {
+  opacity: 0.9;
+}
+
+
+
+#bg-route1 {
+  background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
+                    url('../images/route1.jpeg');
+}
+
+#bg-route2 {
+  background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
+                    url('../images/route2.jpeg');
+}
+
+#bg-route3 {
+  background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
+                    url('../images/route3.jpeg');
+}
+
+#bg-route4 {
+  background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
+                    url('../images/route4.jpeg');
+}
+
+/* ---------- 页脚样式 ---------- */
+.footer {
+  padding: var(--space-md) var(--space-xl);
+  text-align: center;
+  background-color: var(--background-dark);
+  color: var(--text-light);
+  position: relative;
+  z-index: 10;
+}
+
+/* ---------- 媒体查询 ---------- */
+@media (max-width: 1200px) {
+  .routes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .main-title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .map-route-selector {
+    top: 70px;
+    left: 10px;
+    right: 10px;
+    max-width: none;
+  }
+  
+  .selector-options {
+    justify-content: space-between;
+  }
+  
+  .selector-option {
+    font-size: 12px;
+    padding: var(--space-xs) var(--space-sm);
+  }
+  
+  .routes-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .main-title {
+    font-size: 1.8rem;
+  }
+  
+  .main-description {
+    font-size: 1rem;
+  }
+  
+  .route-card {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .map-route-selector {
+    padding: var(--space-sm);
+  }
+  
+  .selector-title {
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+  
+  .menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-md) var(--space-lg);
+  }
+  
+  .main-title {
+    font-size: 1.6rem;
+  }
+  
+  .route-title {
+    font-size: 1.3rem;
+  }
+  
+  .route-card {
+    height: 280px;
+  }
+}

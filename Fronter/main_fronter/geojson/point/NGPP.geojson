@@ -1,0 +1,15 @@
+{
+"type": "FeatureCollection",
+"name": "NGPP",
+"features": [
+{ "type": "Feature", "properties": { "NAME": "广西浦北五皇山国家地质公园" }, "geometry": { "type": "Point", "coordinates": [ 109.345198, 22.162461140000062 ] } },
+{ "type": "Feature", "properties": { "NAME": "广西桂平国家地质公园" }, "geometry": { "type": "Point", "coordinates": [ 110.121672315000069, 23.120055690000072 ] } },
+{ "type": "Feature", "properties": { "NAME": "广西北海涠洲岛火山国家地质公园" }, "geometry": { "type": "Point", "coordinates": [ 109.102793, 21.042261 ] } },
+{ "type": "Feature", "properties": { "NAME": "广西百色乐业大石围天坑群国家地质公园" }, "geometry": { "type": "Point", "coordinates": [ 106.444064705000073, 24.808407885000065 ] } },
+{ "type": "Feature", "properties": { "NAME": "广西凤山岩溶国家地质公园" }, "geometry": { "type": "Point", "coordinates": [ 106.810539935000065, 24.643092555000067 ] } },
+{ "type": "Feature", "properties": { "NAME": "广西大化七百弄国家地质公园" }, "geometry": { "type": "Point", "coordinates": [ 107.748653115000081, 24.134187505000057 ] } },
+{ "type": "Feature", "properties": { "NAME": "广西资源国家地质公园" }, "geometry": { "type": "Point", "coordinates": [ 110.701834955000038, 26.187320575000058 ] } },
+{ "type": "Feature", "properties": { "NAME": "广西鹿寨香桥岩溶国家地质公园" }, "geometry": { "type": "Point", "coordinates": [ 109.666027675000066, 24.728884115000028 ] } },
+{ "type": "Feature", "properties": { "NAME": "广西全州雷公岭国家矿山公园" }, "geometry": { "type": "Point", "coordinates": [ 111.081381255000053, 25.929405295000038 ] } }
+]
+}

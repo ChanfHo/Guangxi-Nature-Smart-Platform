@@ -1,0 +1,166 @@
+/* 聊天机器人图标 */
+.chatbot-icon {
+  position: fixed;
+  top: 50%; /* 垂直居中 */
+  transform: translateY(-50%);
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: grab; /* 鼠标悬停时显示抓取指针 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.chatbot-icon img {
+  width: 40px;
+  height: 40px;
+}
+
+
+/* 聊天窗口 */
+.chatbot-window {
+  position: fixed;
+  top: 60px; /* 设置为导航栏的高度 */
+  right: -100vw; /* 初始状态完全隐藏在视口之外 */
+  width: 25%; /* 占据右侧 25% 的宽度 */
+  height: calc(100% - 60px); /* 减去导航栏的高度 */
+  background-color: rgba(255, 255, 255, 0.9); /* 半透明背景 */
+  border-left: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000; /* 聊天窗口图层较高，避免被地图覆盖 */
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, right 0.3s ease; /* 添加滑动动画 */
+  z-index : 500;
+}
+
+.chatbot-window.open {
+  right: 0; /* 聊天窗口滑入 */
+  transform: translateX(0); /* 确保完全显示 */
+}
+
+.chatbot-header {
+  background-color: #005bac;
+  color: white;
+  padding: 10px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chatbot-header .close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.chatbot-messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  background-color: #f9f9f9;
+}
+
+.chatbot-input {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.chatbot-input input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+.chatbot-input .send-btn {
+  background-color: #005bac;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* 聊天消息 */
+.message {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.message.user {
+  justify-content: flex-start; /* 用户消息靠左 */
+}
+
+
+.message.bot {
+  justify-content: flex-end; /* 机器人消息靠右 */
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+
+.bubble {
+  max-width: 70%;
+  padding: 10px;
+  border-radius: 15px;
+  font-size: 14px;
+  line-height: 1.5;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.message.user .bubble {
+  background-color: #005bac;
+  color: white;
+  border-top-left-radius: 0;
+  margin-left: 10px; /* 气泡与头像的间距 */
+}
+
+.message.bot .bubble {
+  background-color: #f1f1f1;
+  color: #333;
+  border-top-right-radius: 0;
+  margin-right: 10px; /* 气泡与头像的间距 */
+}
+
+/* 气泡尾部 */
+.message.user .bubble::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: -10px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent #005bac transparent transparent;
+}
+
+.message.bot .bubble::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  right: -10px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent #f1f1f1;
+}
