@@ -32,39 +32,3 @@
   * `schemas/`：Pydantic数据验证与序列化模型。
   * `main.py`：后端服务启动入口。
 * `migrations/`：数据库迁移脚本，用于管理和更新数据库表结构。
-
-## 🚀 部署与运行
-
-### 1. 环境准备
-确保您的计算机已安装：
-* Python 3.10+
-* PostgreSQL (建议安装PostGIS插件)
-* Redis
-
-### 2. 后端部署
-```bash
-# 1. 安装依赖
-pip install -r requirement.txt
-
-# 2. 配置环境变量
-# 请在 app/config.py 或使用 .env 文件配置你的数据库连接信息与 DeepSeek API Key
-# 示例:
-# DB_USER = 'postgres'
-# DB_PASSWORD = 'your_password'
-# DEEPSEEK_API_KEY = 'your_deepseek_api_key'
-
-# 3. 运行服务
-uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
-```
-
-### 3. 前端部署
-由于前端直接采用了原生HTML/CSS/JS结构，并请求本地或远程API：
-* 直接使用 VSCode 的 `Live Server` 插件打开 `Fronter/main_fronter/index.html` 即可预览。
-* 如部署至服务器，可使用 Nginx 将静态资源目录指向 `Fronter/main_fronter`。
-
-## 🤝 贡献与反馈
-如果你对本项目感兴趣，欢迎提交 Pull Request，或者在 Issues 中提出你的宝贵意见！
-同时感谢您体验广西自然风光智慧服务平台！
-
----
-**致谢**：感谢中国大学生计算机设计大赛及所有指导老师的悉心指导。
